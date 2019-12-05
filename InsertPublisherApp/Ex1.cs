@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 namespace InsertPublisherApp
 {
-    class Program
+    class Ex1
     {
         static void Main(string[] args)
         {
@@ -15,11 +11,8 @@ namespace InsertPublisherApp
             SqlConnection connection = new SqlConnection(connectionString);           
 
             try
-            {
-                ReadPublishers(connection);
+            {               
                 InsertPublisher(connection);
-                ReadPublishers(connection);
-
             }
             catch (SqlException e)
             {
@@ -29,6 +22,7 @@ namespace InsertPublisherApp
             {
                 connection.Close();
             }
+
             Console.ReadKey();
         }
 
@@ -57,6 +51,8 @@ namespace InsertPublisherApp
                 insertCommand.Parameters.Add(paramName);
 
                 insertCommand.ExecuteScalar();
+
+                Console.WriteLine("The id is: " + newPublisherId);
             }
             catch (SqlException e)
             {
@@ -67,37 +63,6 @@ namespace InsertPublisherApp
                 connection.Close();
             }
             
-        }
-
-        private static void ReadPublishers(SqlConnection connection)
-        {
-            connection.Open();
-            try
-            {
-                string readPublisher = "select * from Publisher";
-
-                SqlCommand command = new SqlCommand(readPublisher, connection);
-
-                SqlDataReader dataReader = command.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    var currentRow = dataReader;
-
-                    var publisherId = currentRow["PublisherId"];
-                    var name = currentRow["Name"];
-
-                    Console.WriteLine($"{publisherId} - {name}");
-                }
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
+        }       
     }
 }

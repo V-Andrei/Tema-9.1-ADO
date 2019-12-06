@@ -8,7 +8,9 @@ namespace InsertPublisherApp
         static void Main(string[] args)
         {
             string connectionString = "Data Source=.;Initial Catalog=HomeworkWeek9Day1;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);           
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+
 
             try
             {               
@@ -28,7 +30,7 @@ namespace InsertPublisherApp
 
         private static void InsertPublisher(SqlConnection connection)
         {
-            connection.Open();
+           
             try
             {
                 string newPublisherName;
@@ -57,10 +59,6 @@ namespace InsertPublisherApp
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                connection.Close();
             }
             
         }       

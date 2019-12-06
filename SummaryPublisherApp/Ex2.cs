@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 namespace SummaryPublisherApp
@@ -13,7 +9,7 @@ namespace SummaryPublisherApp
         {
             string connectionString = "Data Source=.;Initial Catalog=HomeworkWeek9Day1;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
-
+            connection.Open();
             try
             {
                 //CountPublishers(connection);
@@ -35,7 +31,6 @@ namespace SummaryPublisherApp
 
         private static void TotalPrice(SqlConnection connection)
         {
-            connection.Open();
             try
             {
                 int insertPublisherId;
@@ -67,15 +62,10 @@ namespace SummaryPublisherApp
             {
                 Console.WriteLine(e);
             }
-            finally
-            {
-                connection.Close();
-            }
         }
 
         private static void CountBooks(SqlConnection connection)
         {
-            connection.Open();
             try
             {
                 var commandQuery = "select Publisher.name, COUNT(*) AS 'number of books' FROM Publisher, book WHERE Publisher.PublisherId = book.PublisherId GROUP BY Publisher.name";
@@ -98,15 +88,10 @@ namespace SummaryPublisherApp
             {
                 Console.WriteLine(e.Message);
             }
-            finally
-            {
-                connection.Close();
-            }
         }
 
         private static void CountPublishers(SqlConnection connection)
         {
-            connection.Open();
             try
             {
                 var commandQuery = "select count(PublisherId) from Publisher";
@@ -121,15 +106,10 @@ namespace SummaryPublisherApp
             {
                 Console.WriteLine(e.Message);
             }
-            finally
-            {
-                connection.Close();
-            }
         }
 
         private static void ReadPublishers(SqlConnection connection)
         {
-            connection.Open();
             try
             {
                 string readPublisher = "select * from Publisher where PublisherId < 10";
@@ -151,10 +131,6 @@ namespace SummaryPublisherApp
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                connection.Close();
             }
         }
     }

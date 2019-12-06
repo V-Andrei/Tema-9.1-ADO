@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummaryPublisherApp", "..\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudBookApp", "..\CrudBookApp\CrudBookApp.csproj", "{08E796B3-C6A5-473C-A4C7-8D0295C33403}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummaryBookApp", "..\SummaryBookApp\SummaryBookApp.csproj", "{66C88C15-AC6E-43CD-910C-3D7698885E06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{08E796B3-C6A5-473C-A4C7-8D0295C33403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08E796B3-C6A5-473C-A4C7-8D0295C33403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08E796B3-C6A5-473C-A4C7-8D0295C33403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C88C15-AC6E-43CD-910C-3D7698885E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C88C15-AC6E-43CD-910C-3D7698885E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C88C15-AC6E-43CD-910C-3D7698885E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C88C15-AC6E-43CD-910C-3D7698885E06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

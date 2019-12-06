@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86901A53-35CA-41B2-A4A0-BAF1F60DA07A}</ProjectGuid>
+    <ProjectGuid>{66C88C15-AC6E-43CD-910C-3D7698885E06}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>InsertPublisherApp</RootNamespace>
-    <AssemblyName>InsertPublisherApp</AssemblyName>
+    <RootNamespace>SummaryBookApp</RootNamespace>
+    <AssemblyName>SummaryBookApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ex1-2.cs" />
+    <Compile Include="Ex5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace CrudBookApp
 {
-    class Ex3
+    class Ex4
     {
         static void Main(string[] args)
         {

@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace SummaryPublisherApp
 {
-    class Ex2
+    class Ex3
     {
         static void Main(string[] args)
         {

@@ -15,9 +15,7 @@ namespace SummaryBookApp
             {
                 //Select2010Books(connection);
 
-
-
-
+                Top10Books(connection);
             }
             catch (SqlException e)
             {
@@ -29,6 +27,34 @@ namespace SummaryBookApp
             }
 
             Console.ReadKey();
+        }
+
+        private static void Top10Books(SqlConnection connection)
+        {
+            try
+            {
+                var query = "select * from Book where BookId <= 10";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    var currentRow = dataReader;
+
+                    var id = currentRow["BookId"];
+                    var title = currentRow["Title"];
+                    var price = currentRow["Price"];
+
+                    Console.WriteLine($"{id} - {title} - {price} Lei");
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+            }
+
         }
 
         private static void Select2010Books(SqlConnection connection)
@@ -45,7 +71,7 @@ namespace SummaryBookApp
                 {
                     var currentRow = dataReader;
 
-                    var id = currentRow["PublisherId"];
+                    var id = currentRow["BookId"];
                     var title = currentRow["Title"];
 
                     Console.WriteLine($"{id} - {title}");
